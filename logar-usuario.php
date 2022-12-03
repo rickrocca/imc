@@ -2,20 +2,29 @@
 session_start();
 
 if(empty($_POST['nome']) || empty($_POST['senha'])) {
-	exit();
+	header('Location: login.php');
+	
 }
 
-$usuario = $_POST['nome'];
-$senha = $_POST['senha'];
+$usuario = mysqli_real_escape_string($conexao, $_POST['nome']);
+$senha2 = mysqli_real_escape_string($conexao, $_POST['senha']);
 
-$query = "SELECT * from `usuario` where `usuario` = '{$usuario}' and `senha` = '{$senha}'";
+$query = "SELECT * FROM `usuario` WHERE usuario = '$usuario' and senha = '{$senha2}';";
 
-$result = $query;
+$result = mysqli_query($conexao, $query);
 
-$row = $result;
+$row = mysqli_num_rows($result);
+
+//echo $row;
 
 if($row == 1) {
 	$_SESSION['nome'] = $usuario;
+	
+	/*
+	header('Location: index.php?page=perfil');
+	echo "<script>alert('Logado com sucesso');</script>";
+	*/
+
 	print "<script>location.href='?page=perfil';</script>";
     print "<script>alert('Logado com sucesso');</script>";
 	

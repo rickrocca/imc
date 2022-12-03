@@ -11,6 +11,7 @@ CREATE TABLE `login`.`usuario` (
   `imc` FLOAT NOT NULl,
   PRIMARY KEY (`usuario_id`));
 
-INSERT INTO `usuario` (`usuario_id`,`usuario`,`senha`) VALUES (1,'mario','132');
-INSERT INTO `usuario` (`usuario_id`,`usuario`,`senha`) VALUES (2,'pedro','321');
-INSERT INTO `usuario` (`usuario_id`,`usuario`,`senha`) VALUES (3,'jorge','123');
+INSERT INTO `usuario` (`usuario_id`,`usuario`,`senha`,`email`,`altura`,`peso`,`imc`) 
+VALUES ('jorginho', '2315', 'jorginho@gmail.com', '1.75', '63.3', '20.6694');
+INSERT INTO `usuario` (`usuario_id`,`usuario`,`senha`,`email`,`altura`,`peso`,`imc`)
+VALUES ('maria', '67211', 'maria@gmail.com', '1.63', '76.1', '28.6424');

@@ -24,9 +24,6 @@
         <li class="nav-item">
           <a class="nav-link" href="?page=novo">Registrar</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="?page=perfil">Perfil</a>
-        </li>
       </ul>
     </div>
   </div>
@@ -39,6 +36,7 @@
         <div class="col mt-5">
     <?php
         include("config.php");
+        
         switch(@$_REQUEST["page"]){
             case "novo":
                 include("registrar.php");
@@ -48,12 +46,12 @@
             break;
             case "salvar":
                 include("salvar-usuario.php");
-            break;  
+            break; 
+            case "logar":
+              include("logar-usuario.php");
+            break; 
             case "perfil":
                 include("perfil.php");
-            break;
-            case "logar":
-                include("logar-usuario.php");
             break;
             default:
             print "<h1>Bem vindo!</h1>
@@ -63,7 +61,8 @@
             <li>Henrique Rocca</li>
             <li>Iago Estevo</li>
             <li>João Victor</li>
-            <li>Theo Mendes</li>";            
+            <li>Theo Mendes</li>
+            <li>Vyctor Hugo</li>";            
         }
     ?>
     
